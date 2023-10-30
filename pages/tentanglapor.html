@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>E-Dumas Sukasari</title>
+        <link rel="stylesheet" href="../assets/css/tailwind.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" integrity="sha512-7x3zila4t2qNycrtZ31HO0NnJr8kg2VI67YLoRSyi9hGhRN66FHYWr7Axa9Y1J9tGYHVBPqIjSE1ogHrJTz51g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> 
+    </head>
+
+    <body class="font-body">
+
+        <!-- home section -->
+        <section class="bg-white py-10 md:mb-10">
+
+            <div class="container max-w-screen-xl mx-auto px-4">
+
+                <nav class="flex-wrap lg:flex items-center" x-data="{navbarOpen:false}">
+                    <div class="flex items-center mb-10 lg:mb-0">
+                        <!-- <img src="assets/image/navbar-logo.png" alt="Logo"> -->
+
+                        <button class="lg:hidden w-10 h-10 ml-auto flex items-center justify-center border border-blue-500 text-blue-500 rounded-md" @click="navbarOpen = !navbarOpen">
+                            <i data-feather="menu"></i>
+                        </button>
+                    </div>
+
+                    <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:mx-auto lg:space-x-8 xl:space-x-14" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                        <li class="font-semibold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li class="font-semibold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                            <a href="#">Dashboard</a>
+                        </li>
+                        <li class="font-semibold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                            <a href="#">Pengaduan</a>
+                        </li>
+                        <li class="font-semibold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                            <a href="#">Respon</a>
+                        </li>
+                        <li class="font-semibold text-gray-900 hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
+                            <a href="#">Tentang Lapor</a>
+                    </ul>
+
+                        <a href="#" class="px-6 py-4 border-2 border-blue-500 text-blue-500 font-semibold text-lg rounded-xl hover:bg-blue-700 hover:text-white transition ease-linear duration-500">Masuk</a>
+
+                        <a href="#" class="px-6 py-4 border-2 border-blue-500 text-blue-500 font-semibold text-lg rounded-xl hover:bg-blue-700 hover:text-white transition ease-linear duration-500">Daftar</a>
+                    </div>
+                </nav>
+
+            
+
+            </div> <!-- container.// -->
+
+        </section>
+        <!-- home section //end -->
+
+        <!-- feature section -->
+        <section class="bg-white py-16 md:mt-10">
+
+            <div class="container max-w-screen-xl mx-auto px-4">
+
+                <h1 class="font-semibold text-gray-900 text-xl md:text-4xl text-center leading-normal mb-10">Apa itu Lapor ?<br></h1>
+
+                <div class="text-content" style="font-size: large;">
+                    <p>Pengelolaan pengaduan pelayanan publik di setiap organisasi penyelenggara di Indonesia belum terkelola secara efektif dan terintegrasi. Masing-masing organisasi penyelenggara mengelola pengaduan secara parsial dan tidak terkoordinir dengan baik. Akibatnya terjadi duplikasi penanganan pengaduan, atau bahkan bisa terjadi suatu pengaduan tidak ditangani oleh satupun organisasi penyelenggara, dengan alasan pengaduan bukan kewenangannya. Oleh karena itu, untuk mencapai visi dalam good governance maka perlu untuk mengintegrasikan sistem pengelolaan pengaduan pelayanan publik dalam satu pintu. Tujuannya, masyarakat memiliki satu saluran pengaduan secara Nasional.</p><br>
+                    <p>Untuk itu Pemerintah Republik Indonesia membentuk Sistem Pengelolaan Pengaduan Pelayanan Publik Nasional (SP4N) - Layanan Aspirasi dan Pengaduan Online Rakyat (LAPOR!) adalah layanan penyampaian semua aspirasi dan pengaduan masyarakat Indonesia melalui beberapa kanal pengaduan yaitu website www.lapor.go.id, SMS 1708 (Telkomsel, Indosat, Three), Twitter @lapor1708 serta aplikasi mobile (Android dan iOS). Lembaga pengelola SP4N-LAPOR! adalah Kementerian Pendayagunaan Aparatur Negara dan Reformasi Birokrasi (Kementerian PANRB) sebagai Pembina Pelayanan Publik, Kantor Staf Presiden (KSP) sebagai Pengawas Program Prioritas Nasional dan Ombudsman Republik Indonesia sebagai Pengawas Pelayanan Publik. LAPOR! telah ditetapkan sebagai Sistem Pengelolaan Pengaduan Pelayanan Publik Nasional (SP4N) berdasarkan Peraturan Presiden Nomor 76 Tahun 2013 dan Peraturan Menteri Pendayagunaan Aparatur Negara dan Reformasi Birokrasi Nomor 3 Tahun 2015.</p>
+                </div>
+
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+                    <div class="text-center">
+                        <div class="flex justify-center mb-6">
+                            <div class="w-20 py-6 flex justify-center bg-blue-200 bg-opacity-30 text-blue-700 rounded-xl">
+                                <i data-feather="globe"></i>
+                            </div>
+                        </div>
+
+                        <h4 class="font-semibold text-lg md:text-2xl text-gray-900 mb-6">Tulis Laporan</h4>
+
+                        <p class="font-light text-gray-500 text-md md:text-xl mb-6">Laporkan keluhan atau aspirasi anda dengan jelas dan lengkap</p>
+
+                        <div class="flex justify-center">
+                            <a href="#" class="flex items-center gap-5 px-6 py-4 font-semibold text-info text-lg rounded-xl hover:bg-info hover:text-white transition ease-linear duration-500">
+                                Learn more 
+                                <i data-feather="chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <div class="flex justify-center mb-6">
+                            <div class="w-20 py-6 flex justify-center bg-blue-200 bg-opacity-30 text-blue-700 rounded-xl">
+                                <i data-feather="arrow-up-right"></i>
+                            </div>
+                        </div>
+
+                        <h4 class="font-semibold text-lg md:text-2xl text-gray-900 mb-6">Proses Verifikasi</h4>
+
+                        <p class="font-light text-gray-500 text-md md:text-xl mb-6">Dalam 3 hari, laporan Anda akan diverifikasi dan diteruskan kepada instansi berwenang</p>
+
+                    </div>
+
+                    <div class="text-center">
+                        <div class="flex justify-center mb-6">
+                            <div class="w-20 py-6 flex justify-center bg-blue-200 bg-opacity-30 text-blue-700 rounded-xl">
+                                <i data-feather="clock"></i>
+                            </div>
+                        </div>
+
+                        <h4 class="font-semibold text-lg md:text-2xl text-gray-900 mb-6">Proses Tindak Lanjut</h4>
+
+                        <p class="font-light text-gray-500 text-md md:text-xl mb-6">Dalam 5 hari, instansi akan menindaklanjuti dan membalas laporan Anda</p>
+
+                    </div>
+
+                    <div class="text-center">
+                        <div class="flex justify-center mb-6">
+                            <div class="w-20 py-6 flex justify-center bg-blue-200 bg-opacity-30 text-blue-700 rounded-xl">
+                                <i data-feather="clock"></i>
+                            </div>
+                        </div>
+
+                        <h4 class="font-semibold text-lg md:text-2xl text-gray-900 mb-6">Beri Tanggapan</h4>
+
+                        <p class="font-light text-gray-500 text-md md:text-xl mb-6">Anda dapat menanggapi kembali balasan yang diberikan oleh instansi dalam waktu 10 hari</p>
+
+                    </div>
+
+                    <div class="text-center">
+                        <div class="flex justify-center mb-6">
+                            <div class="w-20 py-6 flex justify-center bg-blue-200 bg-opacity-30 text-blue-700 rounded-xl">
+                                <i data-feather="arrow-up-right"></i>
+                            </div>
+                        </div>
+
+                        <h4 class="font-semibold text-lg md:text-2xl text-gray-900 mb-6">Selesai</h4>
+
+                        <p class="font-light text-gray-500 text-md md:text-xl mb-6">Laporan Anda akan terus ditindaklanjuti hingga terselesaikan</p>
+
+                    </div>
+
+                </div>
+
+            </div> <!-- container.// -->
+
+        </section>
+
+
+
+
+        <footer class="bg-white py-16">
+
+            <div class="container max-w-screen-xl mx-auto px-4">
+                <div class="flex flex-col lg:flex-row lg:justify-between">
+
+                    <div class="text-center lg:text-left space-y-7 mb-10 lg:mb-0">
+                        <h4 class="font-semibold text-gray-900 text-lg md:text-2xl">Quick links</h4>
+
+                        <a href="#" class="block font-light text-gray-400 text-sm md:text-lg hover:text-gray-800 transition ease-in-out duration-300">Charity Ratings</a>
+
+                        <a href="#" class="block font-light text-gray-400 text-sm md:text-lg hover:text-gray-800 transition ease-in-out duration-300">Top-Rated Charities</a>
+
+                        <a href="#" class="block font-light text-gray-400 text-sm md:text-lg hover:text-gray-800 transition ease-in-out duration-300">Top Compensation</a>
+
+                        <a href="#" class="block font-light text-gray-400 text-sm md:text-lg hover:text-gray-800 transition ease-in-out duration-300">High Asset Charities</a>
+                    </div>
+
+
+                </div>
+            </div> <!-- container.// -->
+
+        </footer>
+
+        <script>
+            feather.replace()
+        </script>
+
+    </body>
+</html>
