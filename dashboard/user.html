@@ -19,6 +19,8 @@
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#3b7977">
 
+    <link rel="stylesheet" href="../assets/css/style.css">
+
     <!-- Primary Meta Tags -->
     <title>Dashboard</title>
     <meta name="title" content="Tailwind Toolbox - Free Starter Templates and Components for Tailwind CSS">
@@ -143,24 +145,18 @@
                         </a>
                     </li>
                     <li class="mr-3 flex-1">
-                        <a href="pengaduan.html"
+                        <a href="#"
                             class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
                             <i class="fa fa-envelope pr-0 md:pr-3"></i><span
-                                class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Pengaduan</span>
+                                class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Pesan</span>
                         </a>
                     </li>
                     <li class="mr-3 flex-1">
-                        <a href="laporan.html"
-                            class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-blue-600">
-                            <i class="fas fa-chart-area pr-0 md:pr-3 text-blue-600"></i><span
-                                class="pb-1 md:pb-0 text-xs md:text-base text-white md:text-white block md:inline-block">Laporan</span>
-                        </a>
-                    </li>
-                    <li class="mr-3 flex-1">
-                        <a href="registrasi.html"
+                        <a href="#"
                             class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
                             <i class="fa fa-wallet pr-0 md:pr-3"></i><span
-                                class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Registrasi</span>
+                                class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Daftar
+                                Laporan</span>
                         </a>
                     </li>
                 </ul>
@@ -178,82 +174,57 @@
             </div>
 
             <div class="flex flex-wrap">
-                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                    <!--Metric Card-->
-                    <div
-                        class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5">
-                        <div class="flex flex-row items-center">
-                            <div class="flex-shrink pr-4">
-                                <div class="rounded-full p-5 bg-green-600"><i class="fa fa-wallet fa-2x fa-inverse"></i>
-                                </div>
-                            </div>
-                            <div class="flex-1 text-right md:text-center">
-                                <h2 class="font-bold uppercase text-gray-600">Pengguna</h2>
-                                <p class="font-bold text-3xl">100 <span class="text-green-500"><i
-                                            class="fas fa-caret-up"></i></span></p>
-                            </div>
-                        </div>
+                <div class="w-full ">
+                    <h1 style="text-align: center; font-weight: bold; font-family: Arial, Helvetica, sans-serif;">Tulis
+                        Laporan Anda Disini :</h1>
+                    <div class="py-2 px-4 bg-white rounded-b-lg dark:bg-gray-800">
+                        <label for="editor" class="sr-only">Publish post</label>
+                        <textarea id="editor" rows="8"
+                            class="block px-0 w-full text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400"
+                            placeholder="Masukan Laporan" required></textarea>
                     </div>
-                    <!--/Metric Card-->
                 </div>
-                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                    <!--Metric Card-->
+                <div class="mb-6">
+                    <label for="fileAttachment" class="block text-gray-700 text-sm font-bold mb-2">Masukan File/Gambar
+                        :</label>
                     <div
-                        class="bg-gradient-to-b from-indigo-200 to-indigo-100 border-b-4 border-indigo-500 rounded-lg shadow-xl p-5">
-                        <div class="flex flex-row items-center">
-                            <div class="flex-shrink pr-4">
-                                <div class="rounded-full p-5 bg-indigo-600"><i
-                                        class="fas fa-tasks fa-2x fa-inverse"></i></div>
-                            </div>
-                            <div class="flex-1 text-right md:text-center">
-                                <h2 class="font-bold uppercase text-gray-600">Laporan Selesai</h2>
-                                <p class="font-bold text-3xl">7 Laporan</p>
-                            </div>
+                        class="relative border-2 rounded-md px-4 py-3 bg-white flex items-center justify-between hover:border-blue-500 transition duration-150 ease-in-out">
+                        <input type="file" id="fileAttachment" name="fileAttachment"
+                            class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+                                </path>
+                            </svg>
+                            <span class="ml-2 text-sm text-gray-600">Choose a file</span>
                         </div>
+                        <span class="text-sm text-gray-500">Max file size: 5MB</span>
                     </div>
-                    <!--/Metric Card-->
-                </div>
-                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                    <!--Metric Card-->
-                    <div
-                        class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5">
-                        <div class="flex flex-row items-center">
-                            <div class="flex-shrink pr-4">
-                                <div class="rounded-full p-5 bg-red-600"><i class="fas fa-inbox fa-2x fa-inverse"></i>
-                                </div>
-                            </div>
-                            <div class="flex-1 text-right md:text-center">
-                                <h2 class="font-bold uppercase text-gray-600">Laporan Masuk</h2>
-                                <p class="font-bold text-3xl">3 <span class="text-red-500"><i
-                                            class="fas fa-caret-up"></i></span></p>
-                            </div>
-                        </div>
+                    <!-- Submit Button and Character Limit Section -->
+                    <br>
+                    <div class="flex items-center justify-between">
+                        <button type="submit"
+                            class="flex justify-center items-center bg-blue-500 hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue text-white py-2 px-4 rounded-md transition duration-300 gap-2">
+                            Post <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24"
+                                id="send" fill="#fff">
+                                <path fill="none" d="M0 0h24v24H0V0z"></path>
+                                <path
+                                    d="M3.4 20.4l17.45-7.48c.81-.35.81-1.49 0-1.84L3.4 3.6c-.66-.29-1.39.2-1.39.91L2 9.12c0 .5.37.93.87.99L17 12 2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91z">
+                                </path>
+                            </svg>
+                        </button>
+                        <span class="text-gray-500 text-sm">Max 280 characters</span>
                     </div>
-                    <!--/Metric Card-->
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         </div>
     </div>
     </div>
 
     </div>
-
-
-
 
 
 
