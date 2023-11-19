@@ -22,7 +22,7 @@ function responseData(result){
     setCookieWithExpireHour("token",result.token,2);
     if (result.message === "Selamat Datang") {
         // Jika pesan adalah "Selamat Datang", arahkan ke halaman dashboard.
-        window.location.href = "https://e-dumas-sukasari.github.io/web-proposal"; // Gantilah "error.html" dengan halaman error yang sesuai.
+        window.location.href = "./dasboard/admin.html"; // Gantilah "error.html" dengan halaman error yang sesuai.
     } else if (result.message === "Password Salah") {
         // Jika pesan kesalahan adalah "Password salah", arahkan ke halaman error.
         window.location.href = "./404.html";
