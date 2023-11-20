@@ -20,7 +20,7 @@ export default function PostSignUp(){
 function responseData(result){
     setInner("pesan",result.message);
     setCookieWithExpireHour("token",result.token,2);
-    if (result.message === "Selamat Datang!") {
+    if (result.message === "Selamat Datang") {
         // Jika pesan adalah "Selamat Datang", arahkan ke halaman dashboard.
         window.location.href = "./dasboard/admin.html"; // Gantilah "error.html" dengan halaman error yang sesuai.
     } else if (result.message === "Password Salah") {
