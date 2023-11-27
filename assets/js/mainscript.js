@@ -8,7 +8,7 @@ import {onClick} from 'https://jscroot.github.io/element/croot.js';
 let cookie = getCookie("Login")
 if (cookie == ""){
     alert("Anda Belum Sign In Boss");
-    window.location.href = "https://1214005gis5.github.io/signin.html"
+    window.location.href = "https://e-dumas-sukasari.github.io"
 }
 
 get(URLGeoJson,data => {
