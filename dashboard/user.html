@@ -51,6 +51,8 @@
     <!--Totally optional :) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"
         integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/datepicker.min.js"></script>
+    <script src="../path/to/flowbite/dist/datepicker.js"></script>
 
 </head>
 
@@ -88,10 +90,10 @@
 
             <div class="flex w-full pt-2 content-center justify-between md:w-1/3 md:justify-end">
                 <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
-                    <li class="flex-1 md:flex-none md:mr-3">
+                    <!-- <li class="flex-1 md:flex-none md:mr-3">
                         <a class="inline-block py-2 px-4 text-white no-underline" href="tentanglapor.html">Tentang
                             Lapor</a>
-                    </li>
+                    </li> -->
                     <li class="flex-1 md:flex-none md:mr-3">
                         <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
                             href="#">About</a>
@@ -109,12 +111,12 @@
                                 class="dropdownlist absolute bg-gray-800 text-white right-0 mt-3 p-3 overflow-auto z-30 invisible">
                                 <input type="text" class="drop-search p-2 text-gray-600" placeholder="Search.."
                                     id="myInput" onkeyup="filterDD('myDropdown','myInput')">
-                                <a href="#"
+                                <!-- <a href="#"
                                     class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"><i
                                         class="fa fa-user fa-fw"></i> Profile</a>
                                 <a href="#"
                                     class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"><i
-                                        class="fa fa-cog fa-fw"></i> Settings</a>
+                                        class="fa fa-cog fa-fw"></i> Settings</a> -->
                                 <div class="border border-gray-800"></div>
                                 <a href="#"
                                     class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"><i
@@ -127,7 +129,6 @@
         </div>
 
     </nav>
-
 
     <div class="flex flex-col md:flex-row">
 
@@ -172,15 +173,42 @@
                 </div>
             </div>
 
-            <div class="flex flex-wrap">
+            <div class="flex flex-wrap bg-gray-300">
                 <div class="w-full p-6 ">
-                    <h1 style="text-align: center; font-weight: bold; font-family: Arial, Helvetica, sans-serif;">Tulis
-                        Laporan Anda Disini :</h1><br>
+                    <div class="w-full p-6">
+                        <h1 style="text-align: center; font-weight: bold; font-family: Arial, Helvetica, sans-serif;">
+                            Tulis
+                            Laporan Anda Disini :</h1><br>
+                    </div>
+                    <div class="mb-6 p-6">
+                        <div class="py-2 px-2 bg-white rounded-b-lg dark:bg-gray-800">
+                            <label for="editor" class="sr-only">Publish post</label>
+                            <textarea id="editor" rows="2"
+                                class="block px-0 w-full text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400"
+                                placeholder="Masukan Judul Laporan" required></textarea>
+                        </div>
+                    </div>
                     <div class="py-2 px-4 bg-white rounded-b-lg dark:bg-gray-800">
                         <label for="editor" class="sr-only">Publish post</label>
                         <textarea id="editor" rows="8"
                             class="block px-0 w-full text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400"
                             placeholder="Masukan Laporan" required></textarea>
+                    </div>
+                </div>
+                <div class="w-full p-6">
+                    <label for="expiry" class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Tanggal
+                        Kejadian</label>
+                    <div class="relative mb-5 mt-2">
+                        <div class="absolute right-0 text-gray-600 flex items-center pr-3 h-full cursor-pointer">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                            </svg>
+                        </div>
+                        <input datepicker type="text"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Select date">
                     </div>
                 </div>
                 <div class="mb-6 p-6">
