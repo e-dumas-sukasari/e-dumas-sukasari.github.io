@@ -56,8 +56,8 @@
                     <a href="sign/login"
                         class="px-6 py-4 bg-blue-500 text-white font-semibold text-lg rounded-xl hover:bg-blue-700 transition ease-in-out duration-500 mb-5 md:mb-0">Login</a>
 
-                    <a href="#"
-                        class="px-6 py-4 border-2 border-blue-500 text-blue-500 font-semibold text-lg rounded-xl hover:bg-blue-700 hover:text-white transition ease-linear duration-500">Pengaduan</a>
+                    <a href="sign/register.html"
+                        class="px-6 py-4 border-2 border-blue-500 text-blue-500 font-semibold text-lg rounded-xl hover:bg-blue-700 hover:text-white transition ease-linear duration-500">SignUp</a>
                 </div>
             </nav>
 
@@ -66,14 +66,14 @@
                     <h1 class="font-semibold text-gray-900 text-3xl md:text-6xl leading-normal mb-6">Laporkan pengaduan
                         <br> anda Disini
                     </h1>
-
+                    <br>
                     <p class="font-light text-gray-400 text-md md:text-lg leading-normal mb-12"> Kami menyediakan
                         saluran pengaduan yang tepercaya bagi <br> masyarakat di Sukasari Bandung untuk mendukung
                         individu dan penyelenggara </p>
 
-                    <button
+                    <!-- <button
                         class="px-6 py-4 bg-info font-semibold text-white text-lg rounded-xl hover:bg-blue-700 transition ease-in-out duration-500">Login
-                        Terlebih Dahulu</button>
+                        Terlebih Dahulu</button> -->
                 </div>
 
                 <div class="mt-24">
@@ -218,35 +218,98 @@
 
     <!-- join volunters section -->
     <section class="bg-white py-16">
+        <form class="p-12 md:p-24">
+            <div class="flex items-center text-lg mb-6 md:mb-8">
+                <div class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5">
 
-        <div class="container max-w-screen-xl mx-auto px-4">
-
-            <div class="w-full h-full bg-blue-500 rounded-2xl md:rounded-3xl relative lg:flex items-center">
-                <div class="hidden lg:block">
-                    <img src="assets/image/humans.png" alt="Image" class="relative z-10">
-
-                    <img src="assets/image/pattern-2.png" alt="Image" class="absolute top-14 left-40">
-
-                    <img src="assets/image/pattern.png" alt="Image" class="absolute top-0 z-0">
-                </div>
-
-                <div class="lg:relative py-4 lg:py-0">
-                    <h1
-                        class="font-semibold text-white text-xl md:text-4xl text-center lg:text-left leading-normal md:mb-5 lg:mb-10">
-                        Need more reports? Join <br> with us now</h1>
-
-                    <div class="hidden md:block flex items-center text-center lg:text-left space-x-5">
-                        <input type="text" placeholder="Email"
-                            class="px-4 py-4 w-96 bg-gray-50 placeholder-gray-400 rounded-xl outline-none">
-
-                        <button
-                            class="px-6 py-4 font-semibold bg-gray-50 text-info text-lg rounded-xl hover:bg-blue-500 hover:text-white transition ease-in-out duration-500">Join</button>
+                    <div
+                        class="rounded-tl-3xl bg-gradient-to-r from-blue-700 to-gray-700 p-4 shadow text-2xl text-white">
+                        <h3 class="font-bold pl-2">Sampaikan Laporan Pengaduan Anda !</h3>
                     </div>
+
+
+                    <div class="flex flex-wrap bg-gray-300">
+                        <div class="w-full p-6 ">
+                            <div class="w-full p-6">
+                                <h1
+                                    style="text-align: center; font-weight: bold; font-family: Arial, Helvetica, sans-serif;">
+                                    Tulis
+                                    Laporan Disini :</h1><br>
+                            </div>
+                            <div class="mb-6 p-6">
+                                <div class="py-2 px-2 bg-white rounded-b-lg dark:bg-gray-800">
+                                    <label for="editor" class="sr-only">Publish post</label>
+                                    <textarea id="editor" rows="2"
+                                        class="block px-0 w-full text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400"
+                                        placeholder="Masukan Judul Laporan" required></textarea>
+                                </div>
+                            </div>
+                            <div class="py-2 px-4 bg-white rounded-b-lg dark:bg-gray-800">
+                                <label for="editor" class="sr-only">Publish post</label>
+                                <textarea id="editor" rows="8"
+                                    class="block px-0 w-full text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400"
+                                    placeholder="Masukan Laporan" required></textarea>
+                            </div>
+                        </div>
+                        <div class="w-full p-6">
+                            <label for="expiry"
+                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Tanggal
+                                Kejadian</label>
+                            <div class="relative mb-5 mt-2">
+                                <div
+                                    class="absolute right-0 text-gray-600 flex items-center pr-3 h-full cursor-pointer">
+                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                        xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                        <path
+                                            d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                                    </svg>
+                                </div>
+                                <input datepicker type="text"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Select date">
+                            </div>
+                        </div>
+                        <div class="mb-6 p-6">
+                            <label for="fileAttachment" class="block text-gray-700 text-sm font-bold mb-2">Masukan
+                                File/Gambar
+                                :</label>
+                            <div
+                                class="relative border-2 rounded-md px-4 py-3 bg-white flex items-center justify-between hover:border-blue-500 transition duration-150 ease-in-out">
+                                <input type="file" id="fileAttachment" name="fileAttachment"
+                                    class="absolute inset-0 w-full h-full opacity-0 cursor-pointer">
+                                <div class="flex items-center">
+                                    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M12 6v6m0 0v6m0-6h6m-6 0H6">
+                                        </path>
+                                    </svg>
+                                    <span class="ml-2 text-sm text-gray-600">Choose a file</span>
+                                </div>
+                                <span class="text-sm text-gray-500">Max file size: 5MB</span>
+                            </div>
+                            <!-- Submit Button and Character Limit Section -->
+                            <br>
+                            <div class="flex items-center justify-between">
+                                <button type="submit" onclick="showAlert()"
+                                    class="flex justify-center items-center bg-blue-500 hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue text-white py-2 px-4 rounded-md transition duration-300 gap-2">
+                                    Kirim
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24"
+                                        id="send" fill="#fff">
+                                        <path fill="none" d="M0 0h24v24H0V0z"></path>
+                                        <path
+                                            d="M3.4 20.4l17.45-7.48c.81-.35.81-1.49 0-1.84L3.4 3.6c-.66-.29-1.39.2-1.39.91L2 9.12c0 .5.37.93.87.99L17 12 2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91z">
+                                        </path>
+                                    </svg>
+                                </button>
+                                <span class="text-gray-500 text-sm">Max 300 characters</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-        </div> <!-- container.// -->
-
+        </form>
     </section>
     <!-- join volunters section //end -->
 
@@ -335,6 +398,10 @@
 
     <script>
         feather.replace()
+        function showAlert() {
+            alert("Anda Harus Login Terlebih dahulu untuk mengirimkan laporan!");
+            window.location.href = "sign/login.html";
+        }
     </script>
 
 </body>
