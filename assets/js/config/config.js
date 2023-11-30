@@ -42,7 +42,7 @@ export function PostLogin() {
 
 export function AlertPost(value){
     alert(value.message + "\nRegistrasi Berhasil")
-    window.location.href= "/sign/login.html"
+    window.location.href= "https://e-dumas-sukasari.my.id/sign/login"
 }
 
 
@@ -50,7 +50,7 @@ function ResponsePostLogin(response) {
   if (response && response.token) {
     // console.log('Token User:', response.token);
     setCookieWithExpireHour('Login', response.token, 2);
-    window.location.href = '/dashboard/user.html';
+    window.location.href = 'https://e-dumas-sukasari.my.id/dashboard/admin.html';
     alert("Selamat Datang")
   } else {
     alert('Login gagal. Silakan coba lagi.');
