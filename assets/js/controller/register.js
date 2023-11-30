@@ -4,7 +4,7 @@ import { token, UrlRegister } from "../template/template.js";
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector("regis-form");
+    const form = document.querySelector("register-form");
 
     form.addEventListener("submit", function(event) {
         event.preventDefault();
