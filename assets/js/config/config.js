@@ -14,26 +14,6 @@ export function getTokenFromAPI() {
     .catch(error => console.error('Gagal mengambil token:', error));
 }
 
-export function GetDataReport() {
-  const title = document.querySelector("#editor-title");
-  const description = document.querySelector("#editor-description");
-  const dateOccurred = document.querySelector("#datepicker");
-  const fileData = document.querySelector("#fileData");
-
-  console.log("Title:", title);
-  console.log("Description:", description);
-  console.log("Date Occurred:", dateOccurred);
-  console.log("File Data:", fileData);
-
-  const data = new FormData();
-  data.append('title', title.value);
-  data.append('description', description.value);
-  data.append('dateOccurred', dateOccurred.value);
-  data.append('fileData', fileData.files[0]);
-
-  return data;
-}
-
 export function GetDataForm(){
             const username = document.querySelector("#username").value;
             const password = document.querySelector("#password").value;
