@@ -48,10 +48,20 @@ export function AlertPost(value){
 
 function ResponsePostLogin(response) {
   if (response && response.token) {
-    // console.log('Token User:', response.token);
     setCookieWithExpireHour('Login', response.token, 2);
-    window.location.href = 'https://e-dumas-sukasari.my.id/dashboard/admin.html';
-    alert("Selamat Datang")
+    
+    // Pemeriksaan role untuk mengarahkan ke halaman yang sesuai
+    if (response.role === 'admin') {
+      window.location.href = 'https://e-dumas-sukasari.my.id/dashboard/admin.html';
+    } else if (response.role === 'user') {
+      window.location.href = 'https://e-dumas-sukasari.my.id/dashboard/user.html';
+    } else {
+      // Jika role tidak dikenali, dapatkan URL default atau tampilkan pesan kesalahan
+      // Misalnya, window.location.href = 'https://e-dumas-sukasari.my.id/default.html';
+      alert('Role tidak dikenali. Silakan hubungi administrator.');
+    }
+    
+    alert("Selamat Datang");
   } else {
     alert('Login gagal. Silakan coba lagi.');
   }
