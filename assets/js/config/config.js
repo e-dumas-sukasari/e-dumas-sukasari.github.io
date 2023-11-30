@@ -13,6 +13,23 @@ export function getTokenFromAPI() {
     })
     .catch(error => console.error('Gagal mengambil token:', error));
 }
+
+export function GetDataReport() {
+  const title = document.querySelector("#editor-title").value;
+  const description = document.querySelector("#editor-description").value;
+  const dateOccurred = document.querySelector("[datepicker]").value;
+  const fileData = document.querySelector("#fileData").files[0]; // Ambil file pertama dari input file
+
+  const data = new FormData();
+  data.append('title', title);
+  data.append('description', description);
+  data.append('dateOccurred', dateOccurred);
+  data.append('fileData', fileData);
+
+  return data;
+}
+
+
 export function GetDataForm(){
             const username = document.querySelector("#username").value;
             const password = document.querySelector("#password").value;
