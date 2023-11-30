@@ -9,6 +9,6 @@ document.addEventListener("DOMContentLoaded", function() {
     form.addEventListener("submit", function(event) {
         event.preventDefault();
         let data = GetDataForm();
-        postWithBearer(URLPost, token, data, ResponsePost)
+        postWithBearer(UrlRegister, token, data, ResponsePost)
     });
 });
