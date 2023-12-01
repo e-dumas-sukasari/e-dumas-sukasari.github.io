@@ -94,35 +94,38 @@
         </form>
 
         <script>
-            function submitReport() {
-                // Get form data
-                const form = document.getElementById('reportForm');
-                const formData = new FormData(form);
+    function submitReport() {
+        // Get form data
+        const form = document.getElementById('reportForm');
+        const formData = new FormData(form);
 
-                // Make API request
-                fetch('https://asia-southeast2-argon-fire-401902.cloudfunctions.net/postReportEDUMAS', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Login': 'your-auth-token', // Set your authentication token here
-                    },
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        // Handle API response
-                        const statusMessage = document.getElementById('statusMessage');
-                        if (data.status) {
-                            statusMessage.textContent = 'Laporan berhasil dikirim';
-                        } else {
-                            statusMessage.textContent = 'Error: ' + data.message;
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Error:', error);
-                        const statusMessage = document.getElementById('statusMessage');
-                        statusMessage.textContent = 'Terjadi kesalahan saat mengirim laporan';
-                    });
+        // Get authentication token (assuming it's stored in a cookie named 'Login')
+        const authToken = document.cookie.split('; ').find(row => row.startsWith('Login')).split('=')[1];
+
+        // Make API request with the authentication token
+        fetch('https://asia-southeast2-argon-fire-401902.cloudfunctions.net/postReportEDUMAS', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Login': authToken,
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle API response
+            const statusMessage = document.getElementById('statusMessage');
+            if (data.status) {
+                statusMessage.textContent = 'Laporan berhasil dikirim';
+            } else {
+                statusMessage.textContent = 'Error: ' + data.message;
             }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            const statusMessage = document.getElementById('statusMessage');
+            statusMessage.textContent = 'Terjadi kesalahan saat mengirim laporan';
+        });
+    }
         </script>
     </section>
 </body>
