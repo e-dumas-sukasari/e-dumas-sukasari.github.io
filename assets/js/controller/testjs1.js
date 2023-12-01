@@ -47,7 +47,7 @@ const getTokenFromCookies = (cookieName) => {
         phone: document.getElementById('newPhoneInput').value,
         division: {
           DivId: 0,
-          DivName: document.getElementById('newDivNameInput').value, // Updated ID
+          DivName: document.getElementById('newDivisionInput').value,
         },
         account: {
           Username: document.getElementById('newUsernameInput').value,
