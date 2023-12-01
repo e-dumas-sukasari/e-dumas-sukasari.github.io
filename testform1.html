@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Data Input</title>
+</head>
+<body>
+
+<h2>Employee Data Input Form</h2>
+
+<form id="newEmployeeForm">
+    <!-- Employee ID -->
+    <label for="newEmployeeIdInput">Employee ID:</label>
+    <input type="text" id="newEmployeeIdInput" name="newEmployeeIdInput" required><br>
+
+    <!-- Employee Name -->
+    <label for="newNameInput">Name:</label>
+    <input type="text" id="newNameInput" name="newNameInput" required><br>
+
+    <!-- Employee Email -->
+    <label for="newEmailInput">Email:</label>
+    <input type="email" id="newEmailInput" name="newEmailInput" required><br>
+
+    <!-- Employee Phone -->
+    <label for="newPhoneInput">Phone:</label>
+    <input type="text" id="newPhoneInput" name="newPhoneInput" required><br>
+
+    <!-- Division ID -->
+    <label for="newDivIdInput">Division ID:</label>
+    <input type="text" id="newDivIdInput" name="newDivIdInput" required><br>
+
+    <!-- Division Name -->
+    <label for="newDivNameInput">Division Name:</label>
+    <input type="text" id="newDivNameInput" name="newDivNameInput" required><br>
+
+    <!-- Account Username -->
+    <label for="newUsernameInput">Username:</label>
+    <input type="text" id="newUsernameInput" name="newUsernameInput" required><br>
+
+    <!-- Account Password -->
+    <label for="newPasswordInput">Password:</label>
+    <input type="password" id="newPasswordInput" name="newPasswordInput" required><br>
+
+    <!-- Account Role -->
+    <label for="newRoleInput">Role:</label>
+    <select id="newRoleInput" name="newRoleInput" required>
+        <option value="admin">Admin</option>
+        <option value="hr">HR</option>
+        <!-- Add other roles as needed -->
+    </select><br>
+
+    <!-- Salary: Basic Salary -->
+    <label for="newBasicSalaryInput">Basic Salary:</label>
+    <input type="number" id="newBasicSalaryInput" name="newBasicSalaryInput" required><br>
+
+    <!-- Salary: Honor Division -->
+    <label for="newHonorDivisionInput">Honor Division:</label>
+    <input type="number" id="newHonorDivisionInput" name="newHonorDivisionInput" required><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script type="module" src="/assets/js/controller/testjs1.js"></script>
+
+</body>
+</html>
