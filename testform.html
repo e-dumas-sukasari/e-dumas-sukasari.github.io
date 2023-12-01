@@ -13,7 +13,8 @@
             <div class="flex items-center text-lg mb-6 md:mb-8">
                 <div class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5">
 
-                    <div class="rounded-tl-3xl bg-gradient-to-r from-blue-700 to-gray-700 p-4 shadow text-2xl text-white">
+                    <div
+                        class="rounded-tl-3xl bg-gradient-to-r from-blue-700 to-gray-700 p-4 shadow text-2xl text-white">
                         <h3 class="font-bold pl-2">Sampaikan Laporan Pengaduan Anda!</h3>
                     </div>
 
@@ -39,7 +40,8 @@
                         </div>
                         <div class="w-full p-6">
                             <label for="dateOccurred"
-                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Tanggal Kejadian</label>
+                                class="text-gray-800 text-sm font-bold leading-tight tracking-normal">Tanggal
+                                Kejadian</label>
                             <div class="relative mb-5 mt-2">
                                 <div
                                     class="absolute right-0 text-gray-600 flex items-center pr-3 h-full cursor-pointer">
@@ -94,38 +96,37 @@
         </form>
 
         <script>
-    function submitReport() {
-        // Get form data
-        const form = document.getElementById('reportForm');
-        const formData = new FormData(form);
+            function submitReport() {
+                // Get form data
+                const form = document.getElementById('reportForm');
+                const formData = new FormData(form);
 
-        // Get authentication token (assuming it's stored in a cookie named 'Login')
-        const authToken = document.cookie.split('; ').find(row => row.startsWith('Login')).split('=')[1];
+                // Get authentication token (assuming it's stored in a cookie named 'Login')
+                const authToken = document.cookie.split('; ').find(row => row.startsWith('Login')).split('=')[1];
 
-        // Make API request with the authentication token
-        fetch('https://asia-southeast2-argon-fire-401902.cloudfunctions.net/postReportEDUMAS', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Login': authToken,
-            },
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Handle API response
-            const statusMessage = document.getElementById('statusMessage');
-            if (data.status) {
-                statusMessage.textContent = 'Laporan berhasil dikirim';
-            } else {
-                statusMessage.textContent = 'Error: ' + data.message;
+                // Make API request with the authentication token
+                fetch('https://asia-southeast2-argon-fire-401902.cloudfunctions.net/postReportEDUMAS', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Login': authToken,
+                    },
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        // Handle JSON response
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        // Handle errors
+                    });
+
             }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            const statusMessage = document.getElementById('statusMessage');
-            statusMessage.textContent = 'Terjadi kesalahan saat mengirim laporan';
-        });
-    }
         </script>
     </section>
 </body>
