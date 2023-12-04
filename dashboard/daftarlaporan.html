@@ -179,18 +179,20 @@
                                 class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
                                 No</th>
                             <th
-                                class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
                                 NIK</th>
                             <th
                                 class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
                                 Nama</th>
                             <th
                                 class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
-                                Status</th>
+                                Tanggal Masuk</th>
                             <th
                                 class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
-                                Created At</th>
-                            <th class="px-6 py-3 border-b-2 border-gray-300"></th>
+                                Status</th>
+                            <th
+                                class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
+                            </th>
                         </tr>
                     </thead>
                     <tbody class="bg-white">
@@ -203,32 +205,48 @@
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">12034323242</div>
+                                <div class="text-sm leading-5 text-blue-900">121012102121</div>
                             </td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                                <div class="text-sm leading-5 text-blue-900">James Arthur</div>
-                            </td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                                nama</td>
+                            <td
+                                class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
+                                September
+                                12</td>
                             <td
                                 class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                                 <span
                                     class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                                     <span aria-hidden
                                         class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                                    <span class="relative text-xs">active</span>
+                                    <span class="relative text-xs">proses</span>
                                 </span>
                             </td>
                             <td
-                                class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
-                                September 12</td>
-                            <td
                                 class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-500 text-sm leading-5">
                                 <button
-                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none">View
+                                    class="px-5 py-2 border-blue-500 border text-blue-500 rounded transition duration-300 hover:bg-blue-700 hover:text-white focus:outline-none"
+                                    onclick="showDetailsModal(1)">View
                                     Details</button>
                             </td>
                         </tr>
+
                     </tbody>
                 </table>
+
+                <!-- Modal Structure -->
+                <div id="detailsModal"
+                    class="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto hidden">
+                    <div class="bg-white p-8 mx-8 rounded-lg shadow-xl w-3/4">
+                        <h4 class="text-orange-500 text-2xl mb-6">Detail</h4>
+                        <div id="detailsContent" class="mb-8"></div>
+                        <button
+                            class="mt-8 px-6 py-3 bg-gray-300 text-gray-700 rounded transition duration-300 hover:bg-gray-400 focus:outline-none"
+                            onclick="closeDetailsModal()">Close</button>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -271,6 +289,58 @@
                 }
             }
         }
+
+
+        //-- Awal Comment untuk js menampilkan isi view details secara manual--
+        // Mock data for demonstration
+        const mockData = [
+            {
+                judul_laporan: 'Judul Laporan 1',
+                isi_laporan: 'Isi Laporan 1',
+                tanggal_kejadian: '2023-12-01',
+                foto: 'example1.jpg'
+            },
+            {
+                judul_laporan: 'Judul Laporan 2',
+                isi_laporan: 'Isi Laporan 2',
+                tanggal_kejadian: '2023-12-02',
+                foto: 'example2.jpg'
+            }
+        ];
+
+        function showDetailsModal(rowNumber) {
+            const detailsContent = document.getElementById('detailsContent');
+            const rowData = mockData[rowNumber - 1];
+
+            detailsContent.innerHTML = `
+                <p class="mb-4 text-lg"><strong>Judul Laporan:</strong> ${rowData.judul_laporan}</p>
+                <p class="mb-4 text-lg"><strong>Isi Laporan:</strong> ${rowData.isi_laporan}</p>
+                <p class="mb-4 text-lg"><strong>Tanggal Kejadian:</strong> ${rowData.tanggal_kejadian}</p>
+                <img src="${rowData.foto}" alt="Foto" class="w-full mb-8 rounded-md">
+            `;
+
+            // Open the modal
+            const modal = document.getElementById('detailsModal');
+            modal.classList.remove('hidden');
+        }
+
+        function closeDetailsModal() {
+            // Close the modal
+            const modal = document.getElementById('detailsModal');
+            modal.classList.add('hidden');
+        }
+
+        // Handle form submission
+        const responseForm = document.getElementById('responseForm');
+        responseForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const responseText = document.getElementById('responseTextarea').value;
+            console.log('Response submitted:', responseText);
+
+            // Close the modal after submitting response
+            closeDetailsModal();
+        });
+
     </script>
 
 
