@@ -308,7 +308,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.bundle.min.js"></script>
     <script type="module"
-        src="https://cdn.jsdelivr.net/gh/e-dumas-sukasari/js-edumas@0.0.7/assets/js/controller/controller_get.js"></script>
+        src="https://cdn.jsdelivr.net/gh/e-dumas-sukasari/js-edumas@0.0.8/assets/js/controller/controller_get.js"></script>
 
     <script>
         /*Toggle dropdown list*/
@@ -347,53 +347,53 @@
 
         //-- Awal Comment untuk js menampilkan isi view details secara manual--
         // Mock data for demonstration
-        const mockData = [
-            {
-                judul_laporan: 'Judul Laporan 1',
-                isi_laporan: 'Isi Laporan 1',
-                tanggal_kejadian: '2023-12-01',
-                foto: 'example1.jpg'
-            },
-            {
-                judul_laporan: 'Judul Laporan 2',
-                isi_laporan: 'Isi Laporan 2',
-                tanggal_kejadian: '2023-12-02',
-                foto: 'example2.jpg'
-            }
-        ];
+        // const mockData = [
+        //     {
+        //         judul_laporan: 'Judul Laporan 1',
+        //         isi_laporan: 'Isi Laporan 1',
+        //         tanggal_kejadian: '2023-12-01',
+        //         foto: 'example1.jpg'
+        //     },
+        //     {
+        //         judul_laporan: 'Judul Laporan 2',
+        //         isi_laporan: 'Isi Laporan 2',
+        //         tanggal_kejadian: '2023-12-02',
+        //         foto: 'example2.jpg'
+        //     }
+        // ];
 
-        function showDetailsModal(rowNumber) {
-            const detailsContent = document.getElementById('detailsContent');
-            const rowData = mockData[rowNumber - 1];
+        // function showDetailsModal(rowNumber) {
+        //     const detailsContent = document.getElementById('detailsContent');
+        //     const rowData = mockData[rowNumber - 1];
 
-            detailsContent.innerHTML = `
-                <p class="mb-4 text-lg"><strong>Judul Laporan:</strong> ${rowData.judul_laporan}</p>
-                <p class="mb-4 text-lg"><strong>Isi Laporan:</strong> ${rowData.isi_laporan}</p>
-                <p class="mb-4 text-lg"><strong>Tanggal Kejadian:</strong> ${rowData.tanggal_kejadian}</p>
-                <img src="${rowData.foto}" alt="Foto" class="w-full mb-8 rounded-md">
-            `;
+        //     detailsContent.innerHTML = `
+        //         <p class="mb-4 text-lg"><strong>Judul Laporan:</strong> ${rowData.judul_laporan}</p>
+        //         <p class="mb-4 text-lg"><strong>Isi Laporan:</strong> ${rowData.isi_laporan}</p>
+        //         <p class="mb-4 text-lg"><strong>Tanggal Kejadian:</strong> ${rowData.tanggal_kejadian}</p>
+        //         <img src="${rowData.foto}" alt="Foto" class="w-full mb-8 rounded-md">
+        //     `;
 
-            // Open the modal
-            const modal = document.getElementById('detailsModal');
-            modal.classList.remove('hidden');
-        }
+        //     // Open the modal
+        //     const modal = document.getElementById('detailsModal');
+        //     modal.classList.remove('hidden');
+        // }
 
-        function closeDetailsModal() {
-            // Close the modal
-            const modal = document.getElementById('detailsModal');
-            modal.classList.add('hidden');
-        }
+        // function closeDetailsModal() {
+        //     // Close the modal
+        //     const modal = document.getElementById('detailsModal');
+        //     modal.classList.add('hidden');
+        // }
 
-        // Handle form submission
-        const responseForm = document.getElementById('responseForm');
-        responseForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            const responseText = document.getElementById('responseTextarea').value;
-            console.log('Response submitted:', responseText);
+        // // Handle form submission
+        // const responseForm = document.getElementById('responseForm');
+        // responseForm.addEventListener('submit', function (event) {
+        //     event.preventDefault();
+        //     const responseText = document.getElementById('responseTextarea').value;
+        //     console.log('Response submitted:', responseText);
 
-            // Close the modal after submitting response
-            closeDetailsModal();
-        });
+        //     // Close the modal after submitting response
+        //     closeDetailsModal();
+        // });
         //-- Penutupnya Comment untuk js menampilkan isi view details secara manual--
 
         //--BATAS--
