@@ -193,10 +193,13 @@
                             <th
                                 class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">
                                 Role</th>
+                            <th
+                                class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">
+                                Action</th>
                         </tr>
                     </thead>
-                    <tbody class="block md:table-row-group">
-
+                    <tbody class="bg-white" id="UserDataBody">
+                        <!-- Di sini akan ditambahkan baris-baris data oleh JavaScript -->
                     </tbody>
                 </table>
                 <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between mt-4 work-sans">
@@ -259,6 +262,10 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.bundle.min.js"></script>
+    <script type="module"
+        src="https://cdn.jsdelivr.net/gh/e-dumas-sukasari/js-edumas@0.1.4/assets/js/controller/controller_get.js"></script>
 
     <script>
         /*Toggle dropdown list*/
