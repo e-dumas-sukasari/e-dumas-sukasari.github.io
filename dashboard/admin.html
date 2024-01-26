@@ -112,9 +112,10 @@
                                     class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"><i
                                         class="fa fa-user fa-fw"></i> Profile</a>
                                 <div class="border border-gray-800"></div>
-                                <a href="#"
-                                    class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"><i
-                                        class="fas fa-sign-out-alt fa-fw"></i> Log Out</a>
+                                <a href="#" id="logout"
+                                    class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"
+                                    onclick="logout()">
+                                    Log Out</a>
                             </div>
                         </div>
                     </li>
@@ -236,6 +237,9 @@
 
     </div>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <script type="module"
         src="https://cdn.jsdelivr.net/gh/e-dumas-sukasari/js-edumas@0.1.6/assets/js/controller/controller_logout.js"></script>
