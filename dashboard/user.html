@@ -52,7 +52,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"
         integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/datepicker.min.js"></script>
-    <script src="../path/to/flowbite/dist/datepicker.js"></script>
+
 
 </head>
 
@@ -117,10 +117,12 @@
                                 <a href="#"
                                     class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"><i
                                         class="fa fa-cog fa-fw"></i> Settings</a> -->
-                                <div class="border border-gray-800"></div>
-                                <a href="#"
-                                    class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"><i
-                                        class="fas fa-sign-out-alt fa-fw"></i> Log Out</a>
+                                <div class="border border-gray-800">
+                                    <a href="#" id="logout"
+                                        class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"
+                                        onclick="logout()">
+                                        Log Out</a>
+                                </div>
                             </div>
                         </div>
                     </li>
