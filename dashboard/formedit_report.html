@@ -185,31 +185,31 @@
                             </h2>
                             <form id="updateForm" action="#" method="POST" class="p-6">
 
-                                <label for="NikInput" class="font-semibold text-gray-800 hidden">Nik</label>
+                                <label for="NikInput" class="font-semibold text-gray-800">Nik</label>
                                 <input type="text" id="NikInput" name="NikInput"
-                                    class="w-full mb-4 p-2 border text-black hidden" required>
+                                    class="w-full mb-4 p-2 border text-black" required>
 
-                                <label for="NamaInput" class="font-semibold text-gray-800 hidden">Nama</label>
+                                <label for="NamaInput" class="font-semibold text-gray-800">Nama</label>
                                 <input type="text" id="NamaInput" name="NamaInput"
-                                    class="w-full mb-4 p-2 border text-black hidden" required>
+                                    class="w-full mb-4 p-2 border text-black" required>
 
-                                <label for="TitleInput" class="font-semibold text-gray-800 hidden">Judul Laporan</label>
-                                <textarea id="TitleInput" name="TitleInput"
-                                    class="w-full mb-4 p-2 border text-black hidden" required></textarea>
+                                <label for="TitleInput" class="font-semibold text-gray-800">Judul Laporan</label>
+                                <textarea id="TitleInput" name="TitleInput" class="w-full mb-4 p-2 border text-black"
+                                    required></textarea>
 
-                                <label for="DescriptionInput" class="font-semibold text-gray-800 hidden">Isi
+                                <label for="DescriptionInput" class="font-semibold text-gray-800">Isi
                                     Laporan</label>
                                 <textarea id="DescriptionInput" name="DescriptionInput"
-                                    class="w-full mb-4 p-2 border text-black hidden" required></textarea>
+                                    class="w-full mb-4 p-2 border text-black" required></textarea>
 
-                                <label for="DateOccurredInput" class="font-semibold text-gray-800 hidden">Tanggal
+                                <label for="DateOccurredInput" class="font-semibold text-gray-800">Tanggal
                                     Masuk</label>
                                 <input type="text" id="DateOccurredInput" name="DateOccurredInput"
-                                    class="w-full mb-4 p-2 border text-black hidden" required>
+                                    class="w-full mb-4 p-2 border text-black" required>
 
-                                <label for="ImageInput" class="font-semibold text-gray-800 hidden">Image Url</label>
+                                <label for="ImageInput" class="font-semibold text-gray-800">Image Url</label>
                                 <input type="url" id="ImageInput" name="ImageInput"
-                                    class="w-full mb-4 p-2 border text-black hidden" required>
+                                    class="w-full mb-4 p-2 border text-black" required>
 
                                 <label for="StatusInput" class="font-semibold text-gray-800">Status</label>
                                 <select id="StatusInput" name="StatusInput" class="w-full mb-4 p-2 border text-black"
@@ -281,134 +281,6 @@
         }
 
 
-
-        //-- Awal Comment untuk js menampilkan isi view details secara manual--
-        // Mock data for demonstration
-        const mockData = [
-            {
-                judul_laporan: 'Judul Laporan 1',
-                isi_laporan: 'Isi Laporan 1',
-                tanggal_kejadian: '2023-12-01',
-                foto: 'example1.jpg'
-            },
-            {
-                judul_laporan: 'Judul Laporan 2',
-                isi_laporan: 'Isi Laporan 2',
-                tanggal_kejadian: '2023-12-02',
-                foto: 'example2.jpg'
-            }
-        ];
-
-        function showDetailsModal(rowNumber) {
-            const detailsContent = document.getElementById('detailsContent');
-            const rowData = mockData[rowNumber - 1];
-
-            detailsContent.innerHTML = `
-                <p class="mb-4 text-lg"><strong>Judul Laporan:</strong> ${rowData.judul_laporan}</p>
-                <p class="mb-4 text-lg"><strong>Isi Laporan:</strong> ${rowData.isi_laporan}</p>
-                <p class="mb-4 text-lg"><strong>Tanggal Kejadian:</strong> ${rowData.tanggal_kejadian}</p>
-                <img src="${rowData.foto}" alt="Foto" class="w-full mb-8 rounded-md">
-            `;
-
-            // Open the modal
-            const modal = document.getElementById('detailsModal');
-            modal.classList.remove('hidden');
-        }
-
-        function closeDetailsModal() {
-            // Close the modal
-            const modal = document.getElementById('detailsModal');
-            modal.classList.add('hidden');
-        }
-
-        // Handle form submission
-        const responseForm = document.getElementById('responseForm');
-        responseForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            const responseText = document.getElementById('responseTextarea').value;
-            console.log('Response submitted:', responseText);
-
-            // Close the modal after submitting response
-            closeDetailsModal();
-        });
-        //-- Penutupnya Comment untuk js menampilkan isi view details secara manual--
-
-        //--BATAS--
-
-        //-- Comment untuk js menampilkan isi view details secara otomatis dari backend--
-        // Function to fetch data from the backend (replace with actual fetching logic)
-        // async function fetchData() {
-        //   // Use your Go backend API endpoint to fetch data from MongoDB
-        //   const response = await fetch('your_go_backend_api_endpoint');
-        //   const data = await response.json();
-        //   return data;
-        // }
-
-        // // Function to dynamically add rows to the table
-        // async function addRowsToTable() {
-        //   const tableBody = document.getElementById('tableBody');
-        //   const data = await fetchData();
-
-        //   // Clear existing rows
-        //   tableBody.innerHTML = '';
-
-        //   // Add new rows
-        //   data.forEach((row, index) => {
-        //     const newRow = `
-        //                 <tr>
-        //                     <td>${index + 1}</td>
-        //                     <td>${row.nik}</td>
-        //                     <td>${row.nama}</td>
-        //                     <td>${row.tgl_pengaduan}</td>
-        //                     <td>${row.status}</td>
-        //                     <td>
-        //                         <button class="px-4 py-2 bg-blue-500 text-white rounded transition duration-300 hover:bg-blue-700 focus:outline-none"
-        //                             onclick="showDetailsModal(${index + 1})">View Details</button>
-        //                     </td>
-        //                 </tr>
-        //             `;
-        //     tableBody.innerHTML += newRow;
-        //   });
-        // }
-
-        // // Function to show the details modal
-        // function showDetailsModal(rowNumber) {
-        //   const detailsContent = document.getElementById('detailsContent');
-        //   const rowData = mockData[rowNumber - 1]; // Replace with actual data
-
-        //   detailsContent.innerHTML = `
-        //             <p class="mb-4 text-lg"><strong>Judul Laporan:</strong> ${rowData.judul_laporan}</p>
-        //             <p class="mb-4 text-lg"><strong>Isi Laporan:</strong> ${rowData.isi_laporan}</p>
-        //             <p class="mb-4 text-lg"><strong>Tanggal Kejadian:</strong> ${rowData.tanggal_kejadian}</p>
-        //             <img src="${rowData.foto}" alt="Foto" class="w-full mb-8 rounded-md">
-        //         `;
-
-        //   // Open the modal
-        //   const modal = document.getElementById('detailsModal');
-        //   modal.classList.remove('hidden');
-        // }
-
-        // // Function to close the details modal
-        // function closeDetailsModal() {
-        //   // Close the modal
-        //   const modal = document.getElementById('detailsModal');
-        //   modal.classList.add('hidden');
-        // }
-
-        // // Handle form submission
-        // const responseForm = document.getElementById('responseForm');
-        // responseForm.addEventListener('submit', function (event) {
-        //   event.preventDefault();
-        //   const responseText = document.getElementById('responseTextarea').value;
-        //   console.log('Response submitted:', responseText);
-
-        //   // Close the modal after submitting response
-        //   closeDetailsModal();
-        // });
-
-        // // Add rows to the table on page load
-        // addRowsToTable();
-        //-- Penutupnya untuk js menampilkan isi view details secara otomatis dari backend--
 
     </script>
 
