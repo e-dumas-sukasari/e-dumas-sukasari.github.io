@@ -184,31 +184,30 @@
                                 Form Edit Laporan
                             </h2>
                             <form id="updateForm" action="#" method="POST" class="p-6">
-                                <label for="No" class="font-semibold text-gray-800">No</label>
-                                <input type="text" id="NoInput" name="NoInput" class="w-full mb-4 p-2 border text-black"
-                                    required>
 
-                                <label for="NikInput" class="font-semibold text-gray-800">Nik</label>
+                                <label for="NikInput" class="font-semibold text-gray-800 hidden">Nik</label>
                                 <input type="text" id="NikInput" name="NikInput"
                                     class="w-full mb-4 p-2 border text-black" required>
 
-                                <label for="NamaInput" class="font-semibold text-gray-800">Nama</label>
+                                <label for="NamaInput" class="font-semibold text-gray-800 hidden">Nama</label>
                                 <input type="text" id="NamaInput" name="NamaInput"
                                     class="w-full mb-4 p-2 border text-black" required>
 
-                                <label for="TitleInput" class="font-semibold text-gray-800">Judul Laporan</label>
+                                <label for="TitleInput" class="font-semibold text-gray-800 hidden">Judul Laporan</label>
                                 <textarea id="TitleInput" name="TitleInput" class="w-full mb-4 p-2 border text-black"
                                     required></textarea>
 
-                                <label for="DescriptionInput" class="font-semibold text-gray-800">Isi Laporan</label>
+                                <label for="DescriptionInput" class="font-semibold text-gray-800 hidden">Isi
+                                    Laporan</label>
                                 <textarea id="DescriptionInput" name="DescriptionInput"
                                     class="w-full mb-4 p-2 border text-black" required></textarea>
 
-                                <label for="DateOccurredInput" class="font-semibold text-gray-800">Tanggal Masuk</label>
+                                <label for="DateOccurredInput" class="font-semibold text-gray-800 hidden">Tanggal
+                                    Masuk</label>
                                 <input type="text" id="DateOccurredInput" name="DateOccurredInput"
                                     class="w-full mb-4 p-2 border text-black" required>
 
-                                <label for="ImageInput" class="font-semibold text-gray-800">Image Url</label>
+                                <label for="ImageInput" class="font-semibold text-gray-800 hidden">Image Url</label>
                                 <input type="url" id="ImageInput" name="ImageInput"
                                     class="w-full mb-4 p-2 border text-black" required>
 
@@ -218,6 +217,10 @@
                                     <option value="selesai">Selesai</option>
                                     <option value="proses">Proses</option>
                                 </select>
+
+                                <label for="Tanggapan" class="font-semibold text-gray-800 hidden">Tanggapan</label>
+                                <input type="text" id="Tanggapan" name="Tanggapan"
+                                    class="w-full mb-4 p-2 border text-black" required>
 
                                 <button type="submit" id="Submit"
                                     class="py-2 px-4 inline-flex items-center gap-2 rounded-md border border-transparent font-semibold bg-gradient-to-tl from-blue-600 to-violet-600 text-white text-sm">
@@ -241,7 +244,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.bundle.min.js"></script>
     <script type="module"
-        src="https://cdn.jsdelivr.net/gh/e-dumas-sukasari/js-edumas@0.2.3/assets/js/controller/controller_update.js"></script>
+        src="https://cdn.jsdelivr.net/gh/e-dumas-sukasari/js-edumas@0.2.5/assets/js/controller/controller_update.js"></script>
 
     </script>
     <script>
