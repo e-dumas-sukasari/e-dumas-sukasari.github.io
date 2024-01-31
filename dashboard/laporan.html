@@ -77,9 +77,9 @@
                     <div class="absolute search-icon" style="top: 1rem; left: .8rem;">
                         <!-- <svg class="fill-current pointer-events-none text-white w-4 h-4"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"> -->
-                            <path
-                                d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z">
-                            </path>
+                        <path
+                            d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z">
+                        </path>
                         </svg>
                     </div>
                 </span>
@@ -91,10 +91,10 @@
                         <a class="inline-block py-2 px-4 text-white no-underline" href="tentanglapor.html">Tentang
                             Lapor</a>
                     </li> -->
-                    <li class="flex-1 md:flex-none md:mr-3">
-                        <!-- <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                            href="#">About</a> -->
-                    </li>
+                    <!-- <li class="flex-1 md:flex-none md:mr-3">
+                        <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                            href="#">About</a>
+                    </li> -->
                     <li class="flex-1 md:flex-none md:mr-3">
                         <div class="relative inline-block">
                             <button onclick="toggleDD('myDropdown')" class="drop-button text-white focus:outline-none">
@@ -172,10 +172,11 @@
 
             <div class="bg-gray-800 pt-3">
                 <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
-                    <h3 class="font-bold pl-2">Laporan</h3>
+                    <h3 class="font-bold pl-2">Pengaduan</h3>
                 </div>
             </div>
 
+            <!--Table Pengaduan-->
             <div class="-my-2 py-2 overflow-x-auto sm:-mx-2 sm:px-2 lg:-mx-4 pr-10 lg:px-8">
                 <div
                     class="align-middle inline-block min-w-full shadow overflow-hidden bg-white shadow-dashboard px-8 pt-3 rounded-bl-lg rounded-br-lg">
@@ -204,20 +205,18 @@
                                     class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
                                     status</th>
                                 <th
-                                    class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
-                                </th>
-                                <th
-                                    class="px-6 py-3 border-b-2 border-gray-300 text-left leading-4 text-blue-500 tracking-wider">
+                                    class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-blue-500 tracking-wider">
+                                    Tanggapan
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="bg-white">
-
+                        <tbody class="bg-white" id="ReportDataBody">
+                            <!-- Di sini akan ditambahkan baris-baris data oleh JavaScript -->
                         </tbody>
                     </table>
 
                     <!-- Modal Structure -->
-                    <div id="detailsModal"
+                    <div id=" detailsModal"
                         class="fixed inset-0 z-50 flex items-center justify-center overflow-x-hidden overflow-y-auto hidden">
                         <div class="bg-white p-8 mx-8 rounded-lg shadow-xl w-3/4">
                             <h4 class="text-orange-500 text-2xl mb-6">Detail</h4>
@@ -228,6 +227,11 @@
                                         class="block text-gray-700 text-sm font-bold mb-2">Tanggapan</label>
                                     <textarea id="responseTextarea" name="tanggapan"
                                         class="w-full px-4 py-3 border rounded-md"></textarea>
+                                </div>
+                                <div class="mb-6">
+                                    <label for="responseTextarea"
+                                        class="block text-gray-700 text-sm font-bold mb-2">Status</label>
+                                    <input type="status" name="status" id="status" />
                                 </div>
                                 <div class="text-right">
                                     <button type="submit"
@@ -301,11 +305,12 @@
 
     </div>
 
-
-
-
+    <script type="module" src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.bundle.min.js"></script>
     <script type="module"
-        src="https://cdn.jsdelivr.net/gh/e-dumas-sukasari/js-edumas@0.2.1/assets/js/controller/controller_logout.js"></script>
+        src="https://cdn.jsdelivr.net/gh/e-dumas-sukasari/js-edumas@0.4.4/assets/js/controller/controller_getlaporan.js"></script>
+    <script type="module"
+        src="https://cdn.jsdelivr.net/gh/e-dumas-sukasari/js-edumas@0.2.5/assets/js/controller/controller_logout.js"></script>
 
     <script>
         /*Toggle dropdown list*/
@@ -340,56 +345,6 @@
             }
         }
 
-
-        //-- Awal Comment untuk js menampilkan isi view details secara manual--
-        // Mock data for demonstration
-        const mockData = [
-            {
-                judul_laporan: 'Judul Laporan 1',
-                isi_laporan: 'Isi Laporan 1',
-                tanggal_kejadian: '2023-12-01',
-                foto: 'example1.jpg'
-            },
-            {
-                judul_laporan: 'Judul Laporan 2',
-                isi_laporan: 'Isi Laporan 2',
-                tanggal_kejadian: '2023-12-02',
-                foto: 'example2.jpg'
-            }
-        ];
-
-        function showDetailsModal(rowNumber) {
-            const detailsContent = document.getElementById('detailsContent');
-            const rowData = mockData[rowNumber - 1];
-
-            detailsContent.innerHTML = `
-                <p class="mb-4 text-lg"><strong>Judul Laporan:</strong> ${rowData.judul_laporan}</p>
-                <p class="mb-4 text-lg"><strong>Isi Laporan:</strong> ${rowData.isi_laporan}</p>
-                <p class="mb-4 text-lg"><strong>Tanggal Kejadian:</strong> ${rowData.tanggal_kejadian}</p>
-                <img src="${rowData.foto}" alt="Foto" class="w-full mb-8 rounded-md">
-            `;
-
-            // Open the modal
-            const modal = document.getElementById('detailsModal');
-            modal.classList.remove('hidden');
-        }
-
-        function closeDetailsModal() {
-            // Close the modal
-            const modal = document.getElementById('detailsModal');
-            modal.classList.add('hidden');
-        }
-
-        // Handle form submission
-        const responseForm = document.getElementById('responseForm');
-        responseForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            const responseText = document.getElementById('responseTextarea').value;
-            console.log('Response submitted:', responseText);
-
-            // Close the modal after submitting response
-            closeDetailsModal();
-        });
 
     </script>
 

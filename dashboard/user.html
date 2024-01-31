@@ -186,7 +186,8 @@
                     <form id="insertForm" action="#" method="POST" class="p-6">
 
                         <label for="NikInput" class="font-semibold text-gray-800">NIK</label>
-                        <input type="text" id="NikInput" name="NikInput" class="w-full mb-4 p-2 border text-black" maxlength="16" minlength="16" required>
+                        <input type="text" id="NikInput" name="NikInput" class="w-full mb-4 p-2 border text-black"
+                            maxlength="16" minlength="16" required>
 
 
                         <label for="NamaInput" class="font-semibold text-gray-800">Nama</label>
@@ -206,11 +207,13 @@
                             class="w-full mb-4 p-2 border text-black" required>
 
                         <label for="ImageFile" class="font-semibold text-gray-800">Image File</label>
-                        <input type="file" id="ImageFile" name="ImageFile" class="w-full mb-4 p-2 border text-black" accept="image/*" onchange="uploadImage()">
-                        
+                        <input type="file" id="ImageFile" name="ImageFile" class="w-full mb-4 p-2 border text-black"
+                            accept="image/*" onchange="uploadImage()">
+
                         <label for="ImageUrl" class="font-semibold text-gray-800 hidden">Image Url</label>
-                        <input type="url" id="ImageInput" name="ImageInput" class="w-full mb-4 p-2 border text-black hidden" readonly>
-                        
+                        <input type="url" id="ImageInput" name="ImageInput"
+                            class="w-full mb-4 p-2 border text-black hidden" readonly>
+
 
                         <button type="submit" id="Submit"
                             class="py-2 px-4 inline-flex items-center gap-2 rounded-md border border-transparent font-semibold bg-gradient-to-tl from-blue-600 to-violet-600 text-white text-sm">
@@ -234,9 +237,9 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.bundle.min.js"></script>
     <script type="module"
-        src="https://cdn.jsdelivr.net/gh/e-dumas-sukasari/js-edumas@0.2.3/assets/jsuser/controller/controller_insertlaporan.js"></script>
+        src="https://cdn.jsdelivr.net/gh/e-dumas-sukasari/js-edumas@0.4.4/assets/jsuser/controller/controller_insertlaporan.js"></script>
     <script type="module"
-        src="https://cdn.jsdelivr.net/gh/e-dumas-sukasari/js-edumas@0.2.3/assets/js/controller/controller_logout.js"></script>
+        src="https://cdn.jsdelivr.net/gh/e-dumas-sukasari/js-edumas@0.4.4/assets/js/controller/controller_logout.js"></script>
 
     <script>
         /*Toggle dropdown list*/
@@ -272,39 +275,39 @@
         }
     </script>
 
-<script>
-    function uploadImage() {
-        // Mendapatkan elemen input file
-        var input = document.getElementById('ImageFile');
+    <script>
+        function uploadImage() {
+            // Mendapatkan elemen input file
+            var input = document.getElementById('ImageFile');
 
-        // Memastikan bahwa file dipilih
-        if (input.files && input.files[0]) {
-            // Membuat objek FormData untuk mengirim file ke server
-            var formData = new FormData();
-            formData.append('image', input.files[0]);
+            // Memastikan bahwa file dipilih
+            if (input.files && input.files[0]) {
+                // Membuat objek FormData untuk mengirim file ke server
+                var formData = new FormData();
+                formData.append('image', input.files[0]);
 
-            // Menggunakan XMLHttpRequest untuk mengunggah file ke ImgBB
-            var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://api.imgbb.com/1/upload?key=3bfd64ede2c5b2cf4a9c7f70a42e59b8', true);
+                // Menggunakan XMLHttpRequest untuk mengunggah file ke ImgBB
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', 'https://api.imgbb.com/1/upload?key=3bfd64ede2c5b2cf4a9c7f70a42e59b8', true);
 
-            xhr.onload = function() {
-                if (xhr.status === 200) {
-                    // Mendapatkan URL hasil unggahan dari respons ImgBB
-                    var imageUrl = JSON.parse(xhr.responseText).data.url;
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        // Mendapatkan URL hasil unggahan dari respons ImgBB
+                        var imageUrl = JSON.parse(xhr.responseText).data.url;
 
-                    // Mengganti nilai input URL dengan URL hasil unggahan
-                    document.getElementById('ImageInput').value = imageUrl;
-                } else {
-                    // Menangani kesalahan unggah
-                    console.error('Gagal mengunggah gambar');
-                }
-            };
+                        // Mengganti nilai input URL dengan URL hasil unggahan
+                        document.getElementById('ImageInput').value = imageUrl;
+                    } else {
+                        // Menangani kesalahan unggah
+                        console.error('Gagal mengunggah gambar');
+                    }
+                };
 
-            // Mengirim FormData ke server ImgBB
-            xhr.send(formData);
+                // Mengirim FormData ke server ImgBB
+                xhr.send(formData);
+            }
         }
-    }
-</script>
+    </script>
 
 
 </body>
