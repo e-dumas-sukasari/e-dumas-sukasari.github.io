@@ -51,7 +51,8 @@
     <!--Totally optional :) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"
         integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
 
 </head>
@@ -233,6 +234,15 @@
     </div>
 
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Menggunakan flatpickr pada input DateOccurredInput
+            flatpickr("#DateOccurredInput", {
+                dateFormat: "d-m-Y",  // Format tanggal yang diinginkan
+            });
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.bundle.min.js"></script>
