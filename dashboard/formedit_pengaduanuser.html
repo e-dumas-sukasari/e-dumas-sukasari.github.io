@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <meta name="description" content="Tailwind CSS Starter template - Admin theme, dashboard, or web application UI!">
+    <meta name="keywords"
+        content="tailwind,tailwindcss,tailwind css,css,starter template,free template,fixed header, admin starter template, admin template, admin console, example">
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700,800" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#3b7977">
+
+    <!-- Primary Meta Tags -->
+    <title>Tailwind Toolbox - Free Starter Templates and Components for Tailwind CSS</title>
+    <meta name="title" content="Tailwind Toolbox - Free Starter Templates and Components for Tailwind CSS">
+    <meta name="description"
+        content="Free open source Tailwind CSS starter Templates and Components to get you started quickly to creating websites in Tailwind CSS!">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tailwindtoolbox.com/">
+    <meta property="og:title" content="Tailwind Toolbox - Free Starter Templates and Components for Tailwind CSS">
+    <meta property="og:description"
+        content="Free open source Tailwind CSS starter Templates and Components to get you started quickly to creating websites in Tailwind CSS!">
+    <meta property="og:image" content="https://www.tailwindtoolbox.com/social.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.tailwindtoolbox.com/">
+    <meta property="twitter:title" content="Tailwind Toolbox - Free Starter Templates and Components for Tailwind CSS">
+    <meta property="twitter:description"
+        content="Free open source Tailwind CSS starter Templates and Components to get you started quickly to creating websites in Tailwind CSS!">
+    <meta property="twitter:image" content="https://www.tailwindtoolbox.com/social.png">
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet">
+    <!--Replace with your tailwind.css once created-->
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <!--Totally optional :) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"
+        integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body class="bg-gray-800 font-sans leading-normal tracking-normal mt-12">
+
+    <!--Nav-->
+    <nav class="bg-gray-800 pt-2 md:pt-1 pb-1 px-1 mt-0 h-auto fixed w-full z-20 top-0">
+
+        <div class="flex flex-wrap items-center">
+            <div class="flex flex-shrink md:w-1/3 justify-center md:justify-start text-white">
+                <img src="../assets/image/navbar-logo.png" alt="Logo">
+
+                <button
+                    class="lg:hidden w-10 h-10 ml-auto flex items-center justify-center border border-blue-500 text-blue-500 rounded-md"
+                    @click="navbarOpen = !navbarOpen">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+
+            <div class="flex flex-1 md:w-1/3 justify-center md:justify-start text-white px-2">
+                <span class="relative w-full">
+                    <input type="search" placeholder="Search"
+                        class="w-full bg-gray-900 text-white transition border border-transparent focus:outline-none focus:border-gray-400 rounded py-3 px-2 pl-10 appearance-none leading-normal">
+                    <div class="absolute search-icon" style="top: 1rem; left: .8rem;">
+                        <svg class="fill-current pointer-events-none text-white w-4 h-4"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path
+                                d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z">
+                            </path>
+                        </svg>
+                    </div>
+                </span>
+            </div>
+
+            <div class="flex w-full pt-2 content-center justify-between md:w-1/3 md:justify-end">
+                <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
+                    <!-- <li class="flex-1 md:flex-none md:mr-3">
+                        <a class="inline-block py-2 px-4 text-white no-underline" href="tentanglapor.html">Tentang
+                            Lapor</a>
+                    </li> -->
+                    <li class="flex-1 md:flex-none md:mr-3">
+                        <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+                            href="#">About</a>
+                    </li>
+                    <li class="flex-1 md:flex-none md:mr-3">
+                        <div class="relative inline-block">
+                            <button onclick="toggleDD('myDropdown')" class="drop-button text-white focus:outline-none">
+                                <span class="pr-2"><i class="em em-robot_face"></i></span> Hi, User <svg
+                                    class="h-3 fill-current inline" xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                </svg></button>
+                            <div id="myDropdown"
+                                class="dropdownlist absolute bg-gray-800 text-white right-0 mt-3 p-3 overflow-auto z-30 invisible">
+                                <input type="text" class="drop-search p-2 text-gray-600" placeholder="Search.."
+                                    id="myInput" onkeyup="filterDD('myDropdown','myInput')">
+                                <a href="#"
+                                    class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"><i
+                                        class="fa fa-user fa-fw"></i> Profile</a>
+                                <div class="border border-gray-800"></div>
+                                <a href="#"
+                                    class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"><i
+                                        class="fas fa-sign-out-alt fa-fw"></i> Log Out</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+
+
+    <div class="flex flex-col md:flex-row">
+
+        <div class="bg-gray-800 shadow-xl h-16 fixed bottom-0 mt-12 md:relative md:h-screen z-10 w-full md:w-48">
+
+            <div
+                class="md:mt-12 md:w-48 md:fixed md:left-0 md:top-0 content-center md:content-start text-left justify-between">
+                <ul class="list-reset flex flex-row md:flex-col py-0 md:py-3 px-1 md:px-2 text-center md:text-left">
+                    <li class="mr-3 flex-1">
+                        <a href="admin.html"
+                            class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-pink-500">
+                            <i class="fas fa-tasks pr-0 md:pr-3"></i><span
+                                class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="mr-3 flex-1">
+                        <a href="pengaduan.html"
+                            class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
+                            <i class="fa fa-envelope pr-0 md:pr-3"></i><span
+                                class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Pengaduan</span>
+                        </a>
+                    </li>
+                    <li class="mr-3 flex-1">
+                        <a href="laporan.html"
+                            class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
+                            <i class="fa fa-wallet pr-0 md:pr-3"></i><span
+                                class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Laporan</span>
+                        </a>
+                    </li>
+                    <li class="mr-3 flex-1">
+                        <a href="registrasi.html"
+                            class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
+                            <i class="fa fa-wallet pr-0 md:pr-3"></i><span
+                                class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Registrasi</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <div class="main-content flex-1 bg-gray-100 mt-12 md:mt-2 pb-24 md:pb-5">
+
+            <div class="bg-gray-800 pt-3">
+                <div class="rounded-tl-3xl bg-gradient-to-r from-blue-900 to-gray-800 p-4 shadow text-2xl text-white">
+                    <h3 class="font-bold pl-2"> Update Pengaduan</h3>
+                </div>
+            </div>
+
+            <!--- Tabel -->
+            <div class="w-full lg:w-5/6 mx-auto">
+                <div class="bg-white shadow-md rounded my-6 overflow-x-auto">
+                    <div
+                        class="px-6 py-4 grid gap-3 md:flex md:justify-between md:items-center border-b border-gray-200">
+                        <div>
+                            <form id="updateForm" action="#" method="POST" class="p-6">
+
+                                <label for="NikInput" class="font-semibold text-gray-800">Nik</label>
+                                <input type="text" id="NikInput" name="NikInput"
+                                    class="w-full mb-4 p-2 border text-black" required disabled>
+
+                                <label for="NamaInput" class="font-semibold text-gray-800">Nama</label>
+                                <input type="text" id="NamaInput" name="NamaInput"
+                                    class="w-full mb-4 p-2 border text-black" required disabled>
+
+                                <label for="TitleInput" class="font-semibold text-gray-800">Judul Laporan</label>
+                                <textarea id="TitleInput" name="TitleInput" class="w-full mb-4 p-2 border text-black"
+                                    required disabled></textarea>
+
+                                <label for="DescriptionInput" class="font-semibold text-gray-800">Isi
+                                    Laporan</label>
+                                <textarea id="DescriptionInput" name="DescriptionInput"
+                                    class="w-full mb-4 p-2 border text-black" required></textarea>
+
+                                <label for="DateOccurredInput" class="font-semibold text-gray-800">Tanggal
+                                    Masuk</label>
+                                <input type="text" id="DateOccurredInput" name="DateOccurredInput"
+                                    class="w-full mb-4 p-2 border text-black" required disabled>
+
+                                <label for="ImageFile" class="font-semibold text-gray-800">Image File</label>
+                                <input type="file" id="ImageFile" name="ImageFile" class="w-full mb-4 p-2 border text-black"
+                                    accept="image/*" onchange="uploadImage()">
+            
+                                <label for="ImageUrl" class="font-semibold text-gray-800 hidden">Image Url</label>
+                                <input type="url" id="ImageInput" name="ImageInput"
+                                    class="w-full mb-4 p-2 border text-black hidden" readonly>
+
+                                <label for="StatusInput" class="font-semibold text-gray-800 hidden">Status</label>
+                                <input type="text" id="StatusInput" name="StatusInput"
+                                    class="w-full mb-4 p-2 border text-black hidden" required disabled>
+
+                                <label for="PihakTerkaitInput" class="font-semibold text-gray-800">Pihak Terkait</label>
+                                <input type="text" id="PihakTerkaitInput" name="PihakTerkaitInput"
+                                    class="w-full mb-4 p-2 border text-black" required disabled>
+
+
+                                <label for="Tanggapan" class="font-semibold text-gray-800">Tanggapan</label>
+                                <input type="text" id="Tanggapan" name="Tanggapan"
+                                    class="w-full mb-4 p-2 border text-black" required disabled>
+
+                                <button type="submit" id="Submit"
+                                    class="py-2 px-4 inline-flex items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 hover:bg-blue-600 text-white text-sm">
+                                    Submit
+                                </button>
+
+                                <button type="button" onclick="history.back()"
+                                    class="ml-2 py-2 px-4 inline-flex items-center gap-2 rounded-md border border-transparent font-semibold bg-red-500 hover:bg-red-600 text-white text-sm">
+                                    Batal
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.bundle.min.js"></script>
+    <script type="module"
+        src="controller_updatepengaduanuser.js"></script>
+
+    </script>
+    <script>
+        /*Toggle dropdown list*/
+        function toggleDD(myDropMenu) {
+            document.getElementById(myDropMenu).classList.toggle("invisible");
+        }
+        /*Filter dropdown options*/
+        function filterDD(myDropMenu, myDropMenuSearch) {
+            var input, filter, ul, li, a, i;
+            input = document.getElementById(myDropMenuSearch);
+            filter = input.value.toUpperCase();
+            div = document.getElementById(myDropMenu);
+            a = div.getElementsByTagName("a");
+            for (i = 0; i < a.length; i++) {
+                if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    a[i].style.display = "";
+                } else {
+                    a[i].style.display = "none";
+                }
+            }
+        }
+        // Close the dropdown menu if the user clicks outside of it
+        window.onclick = function (event) {
+            if (!event.target.matches('.drop-button') && !event.target.matches('.drop-search')) {
+                var dropdowns = document.getElementsByClassName("dropdownlist");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (!openDropdown.classList.contains('invisible')) {
+                        openDropdown.classList.add('invisible');
+                    }
+                }
+            }
+        }
+
+
+
+    </script>
+
+<script>
+    function uploadImage() {
+        // Mendapatkan elemen input file
+        var input = document.getElementById('ImageFile');
+
+        // Memastikan bahwa file dipilih
+        if (input.files && input.files[0]) {
+            // Membuat objek FormData untuk mengirim file ke server
+            var formData = new FormData();
+            formData.append('image', input.files[0]);
+
+            // Menggunakan XMLHttpRequest untuk mengunggah file ke ImgBB
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://api.imgbb.com/1/upload?key=3bfd64ede2c5b2cf4a9c7f70a42e59b8', true);
+
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    // Mendapatkan URL hasil unggahan dari respons ImgBB
+                    var imageUrl = JSON.parse(xhr.responseText).data.url;
+
+                    // Mengganti nilai input URL dengan URL hasil unggahan
+                    document.getElementById('ImageInput').value = imageUrl;
+                } else {
+                    // Menangani kesalahan unggah
+                    console.error('Gagal mengunggah gambar');
+                }
+            };
+
+            // Mengirim FormData ke server ImgBB
+            xhr.send(formData);
+        }
+    }
+</script>
+
+
+</body>
+
+</html>
