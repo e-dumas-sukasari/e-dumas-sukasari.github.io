@@ -65,7 +65,7 @@ const getTokenFromCookies = (cookieName) => {
         const data = await response.json()
   
         if (response.ok) {
-            showUpdateAlert('Berhasil Update Data', 'success', () => {
+            showUpdateAlert('Berhasil Update Data. Pengaduan anda akan direspon dalam 24 jam kedepan, bila tidak ada kemajuan pada pengaduan anda, anda bisa menghubungi nomor bot whatsapp ini yang terhubung dengan petugas langsung +62 822 555 77 080', 'success', () => {
                 window.location.href = 'daftarlaporan.html';
             });
             
