@@ -220,7 +220,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script type="module"
-        src="https://cdn.jsdelivr.net/gh/e-dumas-sukasari/js-edumas@0.4.4/assets/js/controller/controller_logout.js"></script>
+        src="https://cdn.jsdelivr.net/gh/e-dumas-sukasari/js-edumas@0.5.2/assets/js/controller/controller_logout.js"></script>
     <script>
         function toggleDD(myDropMenu) {
             document.getElementById(myDropMenu).classList.toggle("invisible");
@@ -294,59 +294,59 @@
             }
         }
 
-const getAllReport = async () => {
-    const token = getTokenFromCookies('Login');
-    const targetURL = 'https://asia-southeast2-gisiqbal.cloudfunctions.net/GetAll-Reports';
+        const getAllReport = async () => {
+            const token = getTokenFromCookies('Login');
+            const targetURL = 'https://asia-southeast2-gisiqbal.cloudfunctions.net/GetAll-Reports';
 
-    const myHeaders = new Headers();
-    myHeaders.append('Login', token);
+            const myHeaders = new Headers();
+            myHeaders.append('Login', token);
 
-    const requestOptions = {
-        method: 'GET',
-        headers: myHeaders,
-        redirect: 'follow',
-    };
+            const requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow',
+            };
 
-    try {
-        const response = await fetch(targetURL, requestOptions);
-        const data = await response.json();
+            try {
+                const response = await fetch(targetURL, requestOptions);
+                const data = await response.json();
 
-        if (data.status === true) {
-            const reports = data.data;
+                if (data.status === true) {
+                    const reports = data.data;
 
-            // Hitung jumlah laporan per tanggal
-            const reportsByDate = {};
-            reports.forEach(report => {
-                const dateOccurred = report.dateOccurred;
-                if (reportsByDate[dateOccurred]) {
-                    reportsByDate[dateOccurred]++;
+                    // Hitung jumlah laporan per tanggal
+                    const reportsByDate = {};
+                    reports.forEach(report => {
+                        const dateOccurred = report.dateOccurred;
+                        if (reportsByDate[dateOccurred]) {
+                            reportsByDate[dateOccurred]++;
+                        } else {
+                            reportsByDate[dateOccurred] = 1;
+                        }
+                    });
+
+                    // Menyiapkan data untuk grafik garis
+                    const labels = Object.keys(reportsByDate);
+                    const dataPoints = Object.values(reportsByDate);
+
+                    // Menampilkan jumlah laporan per tanggal pada grafik garis
+                    displayLineChart(labels, dataPoints);
+
+                    // Update juga jumlah laporan selesai dan laporan masuk
+                    const numberOfFinishedReports = reports.filter(report => report.tanggapan).length;
+                    document.getElementById('laporanSelesai').innerText = numberOfFinishedReports;
+
+                    const numberOfIncomingReports = reports.filter(report => !report.tanggapan).length;
+                    document.getElementById('laporanMasuk').innerText = numberOfIncomingReports;
+
+                    displayReportData(data.data, 'ReportDataBody');
                 } else {
-                    reportsByDate[dateOccurred] = 1;
+                    console.error('Error:', data.message);
                 }
-            });
-
-            // Menyiapkan data untuk grafik garis
-            const labels = Object.keys(reportsByDate);
-            const dataPoints = Object.values(reportsByDate);
-
-            // Menampilkan jumlah laporan per tanggal pada grafik garis
-            displayLineChart(labels, dataPoints);
-
-            // Update juga jumlah laporan selesai dan laporan masuk
-            const numberOfFinishedReports = reports.filter(report => report.tanggapan).length;
-            document.getElementById('laporanSelesai').innerText = numberOfFinishedReports;
-
-            const numberOfIncomingReports = reports.filter(report => !report.tanggapan).length;
-            document.getElementById('laporanMasuk').innerText = numberOfIncomingReports;
-
-            displayReportData(data.data, 'ReportDataBody');
-        } else {
-            console.error('Error:', data.message);
-        }
-    } catch (error) {
-        console.error('Error:', error);
-    }
-};
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        };
 
 
         // Fungsi untuk menampilkan grafik garis
